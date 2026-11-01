@@ -1,0 +1,11 @@
+@use "../utilities/variables" as v;
+
+footer {
+  margin: 0;
+  padding: 1.5rem 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #111;
+  color: v.$color-muted;
+  font-size: 0.85rem;
+  text-align: center;
+}

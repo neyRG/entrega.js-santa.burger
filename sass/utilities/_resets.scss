@@ -1,0 +1,87 @@
+@use "./variables" as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: v.$bg-ppal;
+  color: v.$color-text;
+  font-family: v.$fant-ppal;
+  line-height: 1.6;
+
+ 
+  h2,
+  h3,
+  h4 {
+    color: v.$color-text;
+    font-family: v.$font-heading;
+    line-height: 1.1;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: v.$color-muted;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

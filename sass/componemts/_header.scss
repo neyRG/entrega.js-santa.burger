@@ -1,0 +1,145 @@
+@use "../utilities/variables" as v;
+
+@font-face {
+  font-family: "LobsterLocal";
+  src: url("../assets/font/lobster%20(1)/Lobster%201.4.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BlackswordLocal";
+  src: url("../assets/font/blacksword%20(1)/Blacksword.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+header {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.5rem clamp(1rem, 6vw, 6rem);
+  isolation: isolate;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.08)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.4), transparent 55%);
+    content: "";
+    inset: 0;
+  }
+
+  .inicio {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .tex1 {
+    margin-right: auto;
+    color: v.$color-text;
+    font-family: "LobsterLocal", cursive;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .tex2 {
+    color: v.$color-accent;
+    font-family: "BlackswordLocal", cursive;
+    font-size: 1.05em;
+    font-weight: 400;
+  }
+
+  .inicio a {
+    color: v.$color-muted;
+    font-size: 0.9rem;
+    transition: color 180ms ease;
+
+    &:hover,
+    &:focus-visible {
+      color: v.$color-accent;
+    }
+  }
+
+  .imgfood {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    inset: 0;
+  }
+
+  .hero-content{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 760px;
+    padding: 3rem 0 5rem;
+  }
+
+  .hero-eyebrow,
+  .section-eyebrow {
+    color: v.$color-accent;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .hero-content h2 {
+    margin: 0.75rem 0 1.75rem;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    letter-spacing: -0.045em;
+  }
+
+  .hero-button {
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    background-color: v.$color-accent;
+    color: #111;
+    font-weight: 700;
+    transition: background-color 180ms ease, transform 180ms ease;
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-2px);
+      background-color: #ffc15b;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 1.25rem 1rem;
+
+    .inicio {
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+    }
+
+    .tex1 {
+      flex-basis: 100%;
+    }
+
+    .hero-content {
+      padding: 2rem 0 4rem;
+    }
+
+    .hero-content h2 {
+      font-size: clamp(2.8rem, 13vw, 4.5rem);
+    }
+  }
+}
